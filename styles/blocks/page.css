@@ -1,0 +1,53 @@
+.page {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 130px;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.page__body {
+    font-family: 'Golos', sans-serif;
+    margin: 0;
+}
+
+.container {
+    width: 1100px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.main {
+
+}
+
+.main__section {
+    margin-top: 160px;
+    margin-bottom: 50px;
+}
+
+.main__section:first-child {
+    margin-top: 0;
+}
+
+.main__section:last-child {
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+@media (min-width: 760px) {
+    h2 {
+        font-size: 36px;
+    }
+}
+
+.hidden {
+    display: none !important;
+}

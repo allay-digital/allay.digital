@@ -1,0 +1,159 @@
+.start {
+
+}
+
+@media (min-width: 760px) {
+    .start {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 60px;
+    }
+}
+
+@media (min-width: 1100px) {
+    .start {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.start__title {
+    
+}
+
+@media (min-width: 760px) {
+    .start__title:first-child {
+        display: none;
+    }
+}
+
+.start__man {
+    display: none;
+}
+
+@media (min-width: 760px) {
+    .start__man {
+        display: block;
+        grid-column: 1;
+        grid-row: 2;
+        width: 250px;
+        align-self: flex-end;
+        margin-bottom: 30px;
+    }
+}
+
+
+.start__sky {
+
+}
+
+@media (min-width: 760px) {
+    .start__sky {
+        display: none;
+    }
+}
+
+.start__sky-desktop {
+    display: none;
+}
+
+@media (min-width: 1100px) {
+    .start__sky-desktop {
+        display: block;
+        grid-column: 2;
+        grid-row: 1/3;
+        border-radius: 55px;
+        height: 620px;
+    }
+}
+
+.start__subtitle {
+    font-size: 16px;
+}
+
+@media (min-width: 760px) {
+    .start__subtitle {
+        margin-bottom: 0;
+    }
+}
+
+.start__stats {
+    margin: 40px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (min-width: 760px) {
+    .start__stats {
+        margin: 0;
+        grid-row: 1/3;
+    }
+}
+
+@media (min-width: 1100px) {
+    .start__stats {
+        margin: 0;
+        grid-column: 3;
+    }
+}
+
+
+.stats__item {
+    margin: 30px 0;
+}
+
+.stats__title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+
+.stats__bar {
+    background-color: var(--bg-secondary-color);
+    height: 12px;
+    width: 100%;
+    border-radius: 45px;
+}
+
+.stats__bar--line {
+    height: 100%;
+    border-radius: inherit;
+}
+
+.stats__subtitle {
+    font-size: 16px;
+    margin-top: 6px;
+    margin-bottom: 0;
+}
+
+.stats__bar--line-first {
+    background-color: #72C1FF;
+    width: 90%;
+}
+
+.stats__bar--line-second {
+    background-color: #A0D5FF;
+    width: 80%;
+}
+
+.stats__bar--line-third {
+    background-color: #C0E3FF;
+    width: 40%;
+}
+
+.stats-tip__title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+@media (min-width: 1100px) {
+    .stats-tip__title {
+        font-size: 28px;
+    }
+}
+
+.stats-tip__subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
