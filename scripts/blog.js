@@ -35,10 +35,10 @@ function trapFocus(element) {
 function blogToggle() {
     const currentSrc = blogIcon.getAttribute('src'); // Получаем текущий путь иконки
 
-    if (currentSrc === './images/header/triangle.svg') {
-        blogIcon.setAttribute('src', './images/header/triangle-fill.svg');
+    if (currentSrc === '/images/header/triangle.svg') {
+        blogIcon.setAttribute('src', '/images/header/triangle-fill.svg');
     } else {
-        blogIcon.setAttribute('src', './images/header/triangle.svg');
+        blogIcon.setAttribute('src', '/images/header/triangle.svg');
     }
 
     if (blogModal.classList.contains('hidden')) {

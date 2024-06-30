@@ -33,6 +33,12 @@
     }
 }
 
+.header__title--link {
+    border: none;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
 .header__link {
     font-size: 16px;
     text-decoration: none;

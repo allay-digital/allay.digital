@@ -101,7 +101,6 @@
 .form-space {
     display: block;
     height: 122px;
-    background-color: var(--bg-secondary-color);
     position: absolute;
     top: -52px;
     left: 0;
