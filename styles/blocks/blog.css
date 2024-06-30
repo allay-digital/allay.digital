@@ -93,6 +93,7 @@
     }
     
     .blog__social {
+        display: none;
         position: absolute;
         left: 34px;
         display: flex;
