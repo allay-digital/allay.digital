@@ -277,5 +277,6 @@
 
     .content .content-split .calendar {
         margin-left: 0;
+        grid-template-columns: 164px 1fr;
     }
 }
