@@ -271,7 +271,7 @@
     }
 
     .content .calendar {
-        grid-template-columns: 164px 1fr;
+        grid-template-columns: 164px max-content;
         margin-left: 250px;
     }
 
