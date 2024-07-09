@@ -119,6 +119,7 @@
 .stats__bar--line {
     height: 100%;
     border-radius: inherit;
+    background-color: #72C1FF;
 }
 
 .stats__subtitle {
@@ -129,17 +130,14 @@
 }
 
 .stats__bar--line-first {
-    background-color: #72C1FF;
     width: 90%;
 }
 
 .stats__bar--line-second {
-    background-color: #A0D5FF;
     width: 80%;
 }
 
 .stats__bar--line-third {
-    background-color: #C0E3FF;
     width: 40%;
 }
 

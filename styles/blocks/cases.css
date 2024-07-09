@@ -44,10 +44,19 @@
         position: relative;
         height: 250px;
         margin-bottom: 30px;
+        transition: scale 0.2s;
+    }
+
+    .cases__item:hover {
+        scale: 1.02;
     }
 
     .cases__item:last-child {
         margin-bottom: 0;
+    }
+
+    .cases__item:hover .case__title {
+        text-decoration: underline;
     }
 
     .case__title {
