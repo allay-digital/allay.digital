@@ -63,9 +63,11 @@
     .header__link-desktop {
         display: block;
         padding: 10px 25px;
+        margin: 0;
     }
 
     .header__link-label {
+        cursor: pointer !important;
         user-select: none;
         cursor: auto;
     }

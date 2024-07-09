@@ -23,6 +23,11 @@
 
     
     .blog-button__image {
+        rotate: 180deg;
+    }
+
+    .blog-button__image-open {
+        rotate: 0deg;
     }
 
 
@@ -76,6 +81,14 @@
         right: 0; 
         margin-left: auto; 
         margin-right: auto; 
+    }
+
+    .blog__close {
+        font-size: 35px;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        cursor: pointer;
     }
     
     .blog__hint {

@@ -37,8 +37,10 @@ function blogToggle() {
 
     if (currentSrc === '/images/header/triangle.svg') {
         blogIcon.setAttribute('src', '/images/header/triangle-fill.svg');
+        blogIcon.classList.add('blog-button__image-open')
     } else {
         blogIcon.setAttribute('src', '/images/header/triangle.svg');
+        blogIcon.classList.remove('blog-button__image-open')
     }
 
     if (blogModal.classList.contains('hidden')) {
@@ -65,10 +67,13 @@ function blogToggle() {
     }
 }
 
-// Закрытие модального окна при нажатии на затемненный фон
+function blogClose() {
+    blogToggle();
+    blogModal.classList.add('hidden')
+}
+
 overlay.addEventListener('click', function() {
     if (blogModal.classList.contains('show')) {
-        blogToggle();
-        blogModal.classList.add('hidden')
+        blogClose()
     }
 });
