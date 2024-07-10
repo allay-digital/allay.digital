@@ -253,7 +253,7 @@
         margin-bottom: 80px;
         padding: 0 25% 0 0;
     }
-    
+
     .content h3 {
         font-size: 42px;
         margin: 0;
@@ -294,9 +294,13 @@
         grid-template-columns: 164px max-content;
     }
 
-
-    .content .policy p {
+    .policy.content  p {
         padding-right: 0;
         margin-left: 400px;
+    }
+
+    .policy.content h3 {
+        font-size: 25px;
+        width: 380px;
     }
 }
