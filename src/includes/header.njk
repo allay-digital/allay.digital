@@ -1,0 +1,42 @@
+<header class="header">
+    <div class="header__container container">
+        <div class="header__heading">
+            <a class="header__title--link" href="/"><p class="header__link header__link-desktop header__link-label">Home</p></a>
+            <h1 class="header__title">Allay Digital</h1>
+        </div>
+        <button class="blog-button header__link header__link-desktop header__link-center" href="#" onclick="blogToggle()">
+            <p class="blog-button__title">Блог</p>
+            <img id="blogIcon" class="blog-button__image" id="blogTriangle" src="/images/header/triangle.svg" alt="triangle">
+        </button>
+        <a class="header__link header__link--focus" href="#form">Обсудить проект</a>
+    </div>
+    <div id="overlay"></div>
+    <div class="blog hidden" id="blogModal">
+        <div class="blog__close" onclick="blogClose()">&times</div>
+        <div class="blog__hint"></div>
+        <div class="blog__social">
+            <a class="social__link" href="#">
+                <img class="social__image" src="/images/blog/icons/instagram.svg" alt="#">
+            </a>
+            <a class="social__link" href="#">
+                <img class="social__image" src="/images/blog/icons/youtube.svg" alt="#">
+            </a>
+            <a class="social__link" href="#">
+                <img class="social__image" src="/images/blog/icons/telegram.svg" alt="#">
+            </a>
+        </div>
+        <div class="blog__articles">
+            {%- for article in collections.article | reverse -%}
+                <article class="blog__article">
+                    <img class="article__image" src="{{ article.url }}images/preview.jpg" alt="">
+                    <time class="article__date" datetime="{{ article.date.toISOString() }}">{{ article.date | ruDate }}</time>
+                    <p class="article__type">{{article.tags}}</p>
+                    <h2 class="artcle__title">{{ article.data.title }}</h2>
+                    <a class="article__link" href="{{ article.url }}"></a>
+                </article>
+            {%- endfor -%}
+        </div>
+        <a class="hidden" href="">Смотреть еще</a>
+    </div>
+    <script src="/scripts/blog.js"></script>
+</header>

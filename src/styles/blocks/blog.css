@@ -293,4 +293,10 @@
         margin-left: 0;
         grid-template-columns: 164px max-content;
     }
+
+
+    .content .policy p {
+        padding-right: 0;
+        margin-left: 400px;
+    }
 }

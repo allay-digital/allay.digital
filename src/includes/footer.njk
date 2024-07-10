@@ -1,0 +1,87 @@
+<footer class="footer">
+    <div class="footer__container">
+        <h2 class="footer__title" id="form">Расскажите о вашем проекте</h2>
+        <p class="footer__subtitle">Свяжемся в течение рабочего дня</p>
+    </div>
+    
+    <div class="form form__thx hidden" id="formThx">
+        <h3 class="form-contact__title">Спасибо! Мы скоро с вами свяжемся</h3>
+        <button class="form-contact__subtitle" onclick="location.reload()">+ Создать еще один бриф</button>
+    </div>
+    <form class="form" onsubmit="return sendHandler()" id="formSel">
+        <div class="form-space"></div>
+        <div class="form-contact">
+            <h3 class="form-contact__title">Контакты и подробости</h3>
+            <div class="form-contact-container">
+                <input class="form-contact__input" required placeholder="Имя" type="text" id="customerName" oninput="validateName(this)" maxlength="40">
+                <input class="form-contact__input" required placeholder="Почта" type="email" id="customerMail">
+                <textarea class="form-contact__input form-contact__input-text" required placeholder="Привет, Allay Digital! Недавно моя команда запустила…" id="customerText"></textarea>
+            </div>
+            <p class="form-contact__subtitle">Еще можно добавить <span class="form-contact__subtitle--only-desktop">мессенджер</span></p>
+            <ul class="form-contact-container">
+                <div class="developing__block-third--back formBtnBack" id="formBtnBackTg">
+                    <img class="developing__block-third--back-img" id="backTg" src="/images/footer/multiply.svg" alt="back">
+                </div>
+                <div class="developing__block-third--back formBtnBack" id="formBtnBackWa">
+                    <img class="developing__block-third--back-img" id="backWa" src="/images/footer/multiply.svg" alt="back">
+                </div>
+                <li class="form-contact-item" id="tg">
+                    <input class="form-contact__input form-contact__input-check" type="checkbox" name="">
+                    <label class="form-contact__input-label" for="tg">
+                        <img class="form-contact__input-label--icon" id="iconTg" src="/images/footer/tg.svg" alt="Telegram">
+                        <p class="form-contact__input-label--title">Telegram</p>
+                    </label>
+                </li>
+                <li class="form-contact-item" id="wa">
+                    <input class="form-contact__input form-contact__input-check" type="checkbox" name="">
+                    <label class="form-contact__input-label" for="wa">
+                        <img class="form-contact__input-label--icon" id="iconWa" src="/images/footer/wa.svg" alt="">
+                        <p class="form-contact__input-label--title">Whatsapp</p>
+                    </label>
+                </li>
+                <li class="form-contact-item form-contact-item-input hidden" id="formMessengerTg">
+                    <input class="form-contact__input" type="text" placeholder="Ник без @" id="customerTg" pattern="" oninput="validateTg(this)">
+                </li>
+                <li class="form-contact-item form-contact-item-input hidden" id="formMessengerWa">
+                    <input class="form-contact__input" type="text" placeholder="8 (000) 000-00-00" id="customerWa" pattern="" oninput="validatePhone(this)">
+                </li>
+            </ul>
+        </div>
+        <div class="form-task">
+            <h3 class="form-task-title">В чем заключается задача?</h3>
+            <ul class="form-task-list">
+                <input class="form-task__item-check" name="option" type="radio" id="dev">
+                <li class="form-task-item">
+                    <label class="form-task__item-label" for="dev"></label>
+                    <p class="form-task__item-text">Разработка</p>
+                </li>
+                <input class="form-task__item-check" name="option" type="radio" id="designOnly">
+                <li class="form-task-item">
+                    <label class="form-task__item-label" for="designOnly"></label>
+                    <p class="form-task__item-text">Дизайн</p>
+                </li>
+                <input class="form-task__item-check" name="option" type="radio" id="designAndDev">
+                <li class="form-task-item">
+                    <label class="form-task__item-label" for="designAndDev"></label>
+                    <p class="form-task__item-text">Дизайн + Разработка</p>
+                </li>
+                <input class="form-task__item-check" name="option" type="radio" id="other">
+                <li class="form-task-item">
+                    <label class="form-task__item-label" for="other"></label>
+                    <p class="form-task__item-text">Другое</p>
+                </li>
+                <input class="form-task__item-check" name="option" type="radio" id="ask">
+                <li class="form-task-item">
+                    <label class="form-task__item-label" for="ask"></label>
+                    <p class="form-task__item-text">Мне только спросить</p>
+                </li>
+            </ul>
+        </div>
+        <div class="form-task__send">
+            <p class="form-task__caption">Нажимая «Отправить», вы соглашаетесь<br>с <a href="/policy.html">правилами обработки персональных данных</a></p>
+            <button type="button" class="form-task__button" id='sendMailButton' onclick="send_mail()">Отправить</button>
+        </div>
+    </form>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="/scripts/form.js"></script>
+</footer>

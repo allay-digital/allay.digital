@@ -22,8 +22,7 @@ jobs:
       - run: echo "${{ secrets.key }}" > "$HOME/.ssh/key"
       - run: chmod 600 "$HOME/.ssh/key"
       # Build
-      #- run: npm ci
-      #- run: npm run build
+      - run: npm ci
+      - run: npm run build
       # Deploy
-      #- run: cd dist && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . git@${{ secrets.host }}:/var/www/allay.digital/
-      - run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . git@${{ secrets.host }}:/var/www/allay.digital/
+      - run: cd dist && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . git@${{ secrets.host }}:/var/www/allay.digital/
