@@ -119,22 +119,17 @@ permalink: index.html
     </section>
     <section class="main__section cases">
         <h2 class="cases__title">Наши работы говорят за нас</h2>
-        <div class="cases__item">
-            <img class="case__image" src="/images/cases/case-first.jpg" alt="case-first">
-            <h3 class="case__title">Разработка сайта для компании в сфере консалтинга</h3>
-            <a class="case__link" href="/articles/website-developing-for-company-consulting/"></a>
-        </div>
-        <div class="cases__item">
-            <img class="case__image" src="/images/cases/case-second.jpg" alt="#">
-            <h3 class="case__title case__title-reverse">Как мы встроили сторонний API-сервиc на сайт MrSanteh</h3>
-            <a class="case__link" href="/articles/api-service-mrsanteh/"></a>
-        </div>
-        </div>
-        <div class="cases__item">
-            <img class="case__image" src="/images/cases/case-third.jpg" alt="#">
-            <h3 class="case__title">ВТБ Лизинг: анализ аудитории и разработка дизайн-кампании</h3>
-            <a class="case__link" href="/articles/website-developing-hr-vtb-lizing/"></a>
-        </div>
+            {%- for post in collections.post | prettyPosts -%}
+                <div class="cases__item">
+                    <img class="case__image" src="{{ post.url }}images/card.jpg" alt="card">
+                    {% if loop.index == 2 %}
+                        <h3 class="case__title case__title-reverse">{{ post.data.title }}</h3>
+                    {% else %}
+                        <h3 class="case__title">{{ post.data.title }}</h3>
+                    {% endif %}
+                    <a class="case__link" href="{{ post.url }}"></a>
+                </div>
+            {%- endfor -%}
         </div>
     </section>
 </main>

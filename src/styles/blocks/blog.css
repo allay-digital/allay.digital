@@ -123,13 +123,13 @@
 
     }
 
-    .blog__articles {
+    .blog__posts {
         margin: 50px 100px;
         display: grid;
         row-gap: 20px;
     }
 
-    .blog__article {
+    .blog__post {
         display: grid;
         grid-template-columns: 60px 1fr 1fr;
         column-gap: 8px;
@@ -137,21 +137,21 @@
         position: relative;
     }
 
-    .article__image {
+    .post__image {
         border-radius: 20px;
         grid-column: 1;
         grid-row: 1/3;
         align-self: center;
     }
 
-    .article__date {
+    .post__date {
         grid-row: 1;
         grid-column: 2;
         font-size: 14px;
         color: var(--text-secondary-color);
     }
 
-    .article__type {
+    .post__type {
         margin: 0;
         grid-row: 1;
         grid-column: 3;
@@ -160,7 +160,7 @@
         color: var(--text-secondary-color);
     }
 
-    .article__link {
+    .post__link {
         position: absolute;
         top: 0;
         left: 0;

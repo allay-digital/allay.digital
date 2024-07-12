@@ -25,14 +25,32 @@
                 <img class="social__image" src="/images/blog/icons/telegram.svg" alt="#">
             </a>
         </div>
-        <div class="blog__articles">
-            {%- for article in collections.article | reverse -%}
-                <article class="blog__article">
-                    <img class="article__image" src="{{ article.url }}images/preview.jpg" alt="">
-                    <time class="article__date" datetime="{{ article.date.toISOString() }}">{{ article.date | ruDate }}</time>
-                    <p class="article__type">{{article.tags}}</p>
-                    <h2 class="artcle__title">{{ article.data.title }}</h2>
-                    <a class="article__link" href="{{ article.url }}"></a>
+        <div class="blog__posts">
+            {%- for post in collections.post -%}
+                <article class="blog__post">
+                    {% if post.data.tags[1] == 'youtube' %}
+                        <img class="post__image" src="/blog/shorts.png" alt="shorts">
+                    {% elif post.data.tags[1] == 'pic' %}
+                        <img class="post__image" src="/blog/pics.png" alt="pics">
+                    {% elif post.data.tags[1] == 'telegram' %}
+                        <img class="post__image" src="/blog/telegram.png" alt="telegram">
+                    {% else %}
+                        <img class="post__image" src="{{ post.url }}images/preview.jpg" alt="">
+                    {% endif %}
+                    <time class="post__date" datetime="{{ post.date.toISOString() }}">{{ post.date | ruDate }}</time>
+                    {% if post.data.tags[1] == 'youtube' %}
+                        <p class="post__type">YouTube</p>
+                    {% elif post.data.tags[1] == 'instagram*' %}
+                        <p class="post__type">Instagram*</p>
+                    {% elif post.data.tags[1] == 'telegram' %}
+                        <p class="post__type">Telegram</p>
+                    {% elif post.data.tags[1] == 'case' %}
+                        <p class="post__type">Кейс</p>
+                    {% else %}
+                        <p class="post__type">{{ post.data.tags[1] }}</p>
+                    {% endif %}
+                    <h2 class="artcle__title">{{ post.data.title }}</h2>
+                    <a class="post__link" href="{% if post.data.tags[1] != "case" %}{{ post.data.link }}{% else %}{{ post.url }}{% endif %}"></a>
                 </article>
             {%- endfor -%}
         </div>

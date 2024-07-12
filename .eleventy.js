@@ -3,7 +3,8 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/styles")
     eleventyConfig.addPassthroughCopy("src/images")
     eleventyConfig.addPassthroughCopy("src/scripts")
-    eleventyConfig.addPassthroughCopy("src/articles/**/*.!(md)")
+    eleventyConfig.addPassthroughCopy("src/cases/**/*.!(md)")
+    eleventyConfig.addPassthroughCopy("src/blog/**/*.!(md)")
     eleventyConfig.addPassthroughCopy("src/robots.txt")
     eleventyConfig.addPassthroughCopy("src/sitemap.xml")
 
@@ -15,9 +16,9 @@ module.exports = function(eleventyConfig) {
         }).replace(' г.', '');
     });
 
-    eleventyConfig.addFilter('prettyTags', (value) => {
-        return value.slice(1)
-    })
+    eleventyConfig.addFilter('prettyPosts', (posts) => {
+        return posts.reverse().slice(0, 3);
+    });
     
     eleventyConfig.addFilter('fixLinks', (content) => {
         const reg = /(src="[^(https://)])|(src="\/)|(href="[^(https://)])|(href="\/)/g;
