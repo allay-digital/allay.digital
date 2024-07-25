@@ -15,7 +15,7 @@ preview: 'Impact Launch — молодое агентство, занимающ�
 <p>Мы гордимся тем, что смогли справиться с вызовом и предоставить заказчику качественный продукт в установленные сроки</p>
 <div class="calendar">
     <div class="calendar__container">
-        <img class="calendar--image" src="/images/deadlines/calendar.jpg" alt="calendar">
+        <img class="calendar--image" src="./images/calendar.svg" alt="calendar">
     </div>
     <div class="calendar--title">13 дней</div>
     <div class="calendar--subtitle">Общее время<br>работы над<br>проектом</div>
