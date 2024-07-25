@@ -32,41 +32,53 @@
 
 
 
-    /* Стиль для затемнения фона */
+
+
+/* Стиль для затемнения фона */
 #overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
-  display: none; /* Изначально скрыт */
-  z-index: 999; /* Разместить поверх других элементов */
-}
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    display: none; /* Изначально скрыт */
+    z-index: 999; /* Разместить поверх других элементов */
+    transition: opacity 0.4s ease-out; /* Плавное исчезновение */
+  }
+  
+  /* Исходное состояние модального окна */
+  #blogModal {
+    opacity: 0;
+    z-index: 1000; /* Разместить поверх затемнения */
+    position: fixed;
+    top: -100%;
+    transition: top 0.4s ease-out, opacity 0.4s ease-out;
 
-/* Исходное состояние модального окна */
-#blogModal {
-  opacity: 0;
-  z-index: 1000; /* Разместить поверх затемнения */
-}
-
-/* Модальное окно, которое будет видно на экране */
-#blogModal.show {
-  opacity: 1;
-}
-
-
-    /* #blogModal {
-        position: fixed;
-        top: -100%;
-        left: 50%;
-        transform: translateX(-50%);
-        transition: top 0.2s ease;
-    }
-    
-    #blogModal.show {
-        top: 10%;
-    } */
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+  }
+  
+  /* Модальное окно, которое будет видно на экране */
+  #blogModal.show {
+    opacity: 1;
+    top: 10%;
+  }
+  
+  /* Добавляем класс для анимации закрытия */
+  #blogModal.hide {
+    opacity: 0;
+    top: -100%;
+  }
+  
+  /* Скрытое модальное окно */
+  #blogModal.hidden {
+    display: none;
+  }
+  
+  
     
 
 

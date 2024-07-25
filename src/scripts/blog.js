@@ -33,34 +33,30 @@ function trapFocus(element) {
 }
 
 function blogToggle() {
-    const currentSrc = blogIcon.getAttribute('src'); // Получаем текущий путь иконки
+    const currentSrc = blogIcon.getAttribute('src');
 
-    if (currentSrc === '/images/header/triangle.svg') {
+    if (blogModal.classList.contains('hidden') || blogModal.classList.contains('hide')) {
         blogIcon.setAttribute('src', '/images/header/triangle-fill.svg');
+        blogModal.classList.remove('hidden', 'hide');
         blogIcon.classList.add('blog-button__image-open')
-    } else {
-        blogIcon.setAttribute('src', '/images/header/triangle.svg');
-        blogIcon.classList.remove('blog-button__image-open')
-    }
-
-    if (blogModal.classList.contains('hidden')) {
-        // Удаляем класс hidden и добавляем класс для анимации
-        blogModal.classList.remove('hidden');
         overlay.style.display = 'block';
         disableScroll();
         setTimeout(() => {
             blogModal.classList.add('show');
-            blogModal.focus(); // Перевести фокус на модальное окно
-            trapFocus(blogModal); // Ограничить фокус элементами модального окна
-        }, 10); // Небольшая задержка для срабатывания transition
+            blogModal.focus();
+            trapFocus(blogModal);
+        }, 10);
     } else {
-        // Удаляем класс для анимации и добавляем класс hidden после завершения анимации
         blogModal.classList.remove('show');
-        overlay.style.display = 'none';
+        blogModal.classList.add('hide');
+        blogIcon.setAttribute('src', '/images/header/triangle.svg');
+        overlay.style.opacity = 0;
         enableScroll();
         blogModal.addEventListener('transitionend', function handleTransitionEnd() {
-            if (!blogModal.classList.contains('show')) {
+            if (blogModal.classList.contains('hide')) {
                 blogModal.classList.add('hidden');
+                overlay.style.display = 'none'; // Скрытие фона после завершения анимации
+                overlay.style.opacity = ''; // Сброс стиля opacity
             }
             blogModal.removeEventListener('transitionend', handleTransitionEnd);
         });
@@ -68,8 +64,20 @@ function blogToggle() {
 }
 
 function blogClose() {
-    blogToggle();
-    blogModal.classList.add('hidden')
+    blogModal.classList.remove('show');
+    blogModal.classList.add('hide');
+    blogIcon.setAttribute('src', '/images/header/triangle.svg'); // Изменение иконки при закрытии
+    blogIcon.classList.remove('blog-button__image-open')
+    overlay.style.opacity = 0; // Плавное исчезновение фона
+    enableScroll();
+    blogModal.addEventListener('transitionend', function handleTransitionEnd() {
+        if (blogModal.classList.contains('hide')) {
+            blogModal.classList.add('hidden');
+            overlay.style.display = 'none'; // Скрытие фона после завершения анимации
+            overlay.style.opacity = ''; // Сброс стиля opacity
+        }
+        blogModal.removeEventListener('transitionend', handleTransitionEnd);
+    });
 }
 
 overlay.addEventListener('click', function() {
