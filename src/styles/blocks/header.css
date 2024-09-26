@@ -23,7 +23,7 @@
 
 .header__title {
     margin: 0;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .header__link {
-    font-size: 16px;
+    font-size: 14px;
     text-decoration: none;
     padding: 8px 10px;
     border-radius: 50px;
@@ -50,7 +50,7 @@
 
 @media (min-width: 760px) {
     .header__link {
-        font-size: 18px;
+        font-size: 1px;
         color: var(--text-color);
     }
 }
