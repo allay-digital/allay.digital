@@ -11,6 +11,7 @@
 .page__body {
     font-family: 'Golos Text', sans-serif;
     margin: 0;
+    background-color: #fff;
 }
 
 .container {
