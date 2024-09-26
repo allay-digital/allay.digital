@@ -18,12 +18,17 @@
 .header__heading {
     display: flex;
     align-items: center;
-    column-gap: 18px;
+}
+
+@media (min-width: 760px) {
+    .header__heading {
+        column-gap: 18px;
+    }
 }
 
 .header__title {
     margin: 0;
-    font-size: 22px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -50,7 +55,7 @@
 
 @media (min-width: 760px) {
     .header__link {
-        font-size: 1px;
+        font-size: 18px;
         color: var(--text-color);
     }
 }
