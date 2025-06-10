@@ -1,4 +1,9 @@
 module.exports = function(eleventyConfig) {
+    eleventyConfig.setServerOptions({
+        host: "0.0.0.0",
+        port: 5555,
+        showAllHosts: true
+    });
 
     eleventyConfig.addPassthroughCopy("src/styles")
     eleventyConfig.addPassthroughCopy("src/images")

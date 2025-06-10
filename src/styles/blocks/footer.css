@@ -1,28 +1,27 @@
 .footer {
-    margin: 0 auto;
-    margin-top: 110px;
-    max-width: 100%;
+    margin-bottom: 100px;
 }
 
-@media (min-width: 1060px) {
+/* @media (min-width: 1060px) {
     .footer {
         width: 1100px;
         max-width: 100%;
         margin: 0 auto;
         padding: 0 24px;
     }
-}
+} */
 
 .footer__title {
-
+    text-transform: uppercase;
+    font-style: italic;
 }
 
 .footer__subtitle {
-    font-size: 16px;
+    font-weight: 500;
 }
 
 @media (min-width: 760px) {
     .footer__subtitle {
-        font-size: 20px;
+
     }
 }

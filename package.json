@@ -3,7 +3,7 @@
   "scripts": {
     "start": "npx eleventy --serve --quiet",
     "build": "rm -rf dist && eleventy && gulp build",
-    "deploy": "npm run build && cd dist && rsync --archive --compress --delete . git@vps:/var/www/allay.digital"
+    "deploy": "npm run build && cd dist && rsync --archive --compress --delete . allay:/var/www/allay.digital"
   },
   "homepage": "https://allay.digital",
   "dependencies": {

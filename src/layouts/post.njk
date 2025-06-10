@@ -1,8 +1,20 @@
 ---
 layout: page.njk
 ---
-<main class="main container">
-    <section class="main__section content">
+<section class="case container">
+    <div class="case__heading">
+        <p class="case__heading--tag">{{ tag }}</p>
+        <h1 class="case__heading--title">{{ title }}</h1>
+        <p class="case__heading--desc">{{ desc }}</p>
+        {% if link %}
+        <a class="case__heading--link" href="{{ link }}">{{ linkLabel }}
+            <svg width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 6.5L16.3379 6.13142L16.7399 6.5L16.3379 6.86858L16 6.5ZM1 7C0.723858 7 0.5 6.77614 0.5 6.5C0.5 6.22386 0.723858 6 1 6V7ZM10 1L10.3379 0.631423L16.3379 6.13142L16 6.5L15.6621 6.86858L9.66214 1.36858L10 1ZM16 6.5L16.3379 6.86858L10.3379 12.3686L10 12L9.66214 11.6314L15.6621 6.13142L16 6.5ZM16 6.5V7H1V6.5V6H16V6.5Z" fill="black"/>
+            </svg>
+        </a>
+        {% endif %}
+    </div>
+    <div class="case__content">
         {{ content | safe }}
-    </section>
-</main>
+    </div>
+</section>

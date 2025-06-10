@@ -1,0 +1,113 @@
+/* xs */
+
+:host,
+:root {
+    font-size: 100%;
+    --inner-gap: 15px;
+    --outer-gap: 20px;
+    
+    --text-color: #000000;
+    --bg-color: #ffffff;
+    --text-secondary-color: #666666;
+    --bg-secondary-color: #D2D2D2;
+}
+
+.container {
+    margin: 0 var(--outer-gap);
+}
+
+/* s */
+
+@media (min-width: 390px) { 
+    :host,
+    :root {
+        font-size: 106.25%;
+        --inner-gap: 18px;
+    }
+}
+
+/* m */
+
+@media (min-width: 600px) {
+    :host,
+    :root {
+        font-size: 112.5%;
+            --inner-gap: 20px;
+            --outer-gap: 30px;
+    }
+}
+
+/* l */
+
+@media (min-width: 960px) {
+    :host,
+    :root {
+        font-size: 118.75%;
+        --outer-gap: 60px;
+    } 
+}
+
+/* xl */
+
+@media (min-width: 1280px) {
+    :host,
+    :root {
+        font-size: 125%;
+        --inner-gap: 30px;
+    }
+}
+
+/* xxl */
+
+@media (min-width: 1400px) {
+    .container {
+        margin: 0 auto;
+        width: 1280px;
+        max-width: 100%;
+    }    
+}
+
+.hidden {
+    display: none !important;
+}
+
+small {
+    font-size: 0.875em;
+}
+
+h1 {
+    font-size: 2rem;
+    line-height: 1.125;
+    font-weight: 600;
+    margin: var(--outer-gap) 0 var(--inner-gap) 0;
+}
+
+h2 {
+    font-size: 1.75rem;
+    line-height: 1.15;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.5rem;
+    line-height: 1.175;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 1.125rem;
+    line-height: 1.225;
+    font-weight: 600;
+}
+
+h6 {
+    font-size: 1rem;
+    line-height: 1.25;
+    font-weight: 600;
+}

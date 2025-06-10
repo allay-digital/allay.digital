@@ -1,31 +1,28 @@
-<footer class="footer container" style="margin-bottom: 100px; margin-top: 100px">
+<footer class="footer container">
     <div class="footer__container">
-        <h2 class="footer__title" id="form">Расскажите о вашем проекте</h2>
+        <h1 class="footer__title" id="contact">Расскажите о вашем проекте</h1>
         <p class="footer__subtitle">Свяжемся в течение рабочего дня</p>
     </div>
     <div class="form form__thx hidden" id="formThx">
-        <h3 class="form-contact__title">Спасибо! Мы скоро с вами свяжемся</h3>
-        <button class="form-contact__subtitle" onclick="location.reload()">+ Создать еще один бриф</button>
+        <h3 class="form-contact__title">Спасибо! Заявка отправлена</h3>
+        <button class="form-contact__subtitle form__button" onclick="location.reload()">+ Создать еще один бриф</button>
     </div>
-    <form class="form" onsubmit="send_mail(); return false;">
+    <form id="applicationForm" class="form">
+        <input type="hidden" id="csrfToken" name="_csrf">
         <input class="form__input" type="text" placeholder="Имя*" id="customerName" required>
-        <input class="form__input" type="text" placeholder="Телефон" id="customerPhone">
+        <input class="form__input" type="text" placeholder="Telegram*" id="customerTg" required>
         <input class="form__input" type="email" placeholder="E-mail*" id="customerMail" required>
-        <input class="form__input" type="text" placeholder="Telegram" id="customerTg">
+        <input class="form__input" type="text" placeholder="Телефон" id="customerPhone">
         <textarea class="form__input form__textarea form__wide" placeholder="Описание задачи" oninput="auto_grow(this)" id="customerText"></textarea>
-        <script>
-            function auto_grow(element) {
-                element.style.height = "5px";
-                element.style.height = (element.scrollHeight) + "px";
-            }
-        </script>
+        
         <label class="form__check form__wide">
             <input class="form__check--checkbox" type="checkbox" checked id="form-checkbox" required>
             <span class="form__check--checkbox-icon"></span>
             <p>Я согласен с <a href="/policy.html">правилами обработки персональных данных</a></p>
         </label>
-        <button type="submit" class="form__button form__wide">Отправить<img src="/images/form/arrow.svg" alt="#"></button>
+        <button type="submit" class="form__button form__wide">Отправить
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m553.85-253.85-42.16-43.38L664.46-450H180v-60h484.46L511.69-662.77l42.16-43.38L780-480 553.85-253.85Z"/></svg>
+        </button>
     </form>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="/scripts/form.js"></script>
 </footer>
